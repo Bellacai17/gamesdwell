@@ -177,129 +177,63 @@ export const games: Game[] = [
     title: 'Soccer Stars',
     description: 'Compete in fast-paced soccer matches with intuitive controls and physics-based gameplay.',
     category: 'sports',
-    thumbnailUrl: '/games/soccer-stars.jpg',
-    iframeUrl: 'https://cloud.onlinegames.io/games/2023/sports/soccer-stars/index.html',
-    controls: 'Drag and release to shoot, tap to pass',
+    thumbnail: '/games/soccer-stars.jpg',
+    url: 'https://cloud.onlinegames.io/games/2023/sports/soccer-stars/index.html',
     tags: ['sports', 'soccer', 'physics', 'multiplayer'],
-    featured: false,
-    status: 'active',
+    iframeWidth: 960,
+    iframeHeight: 540,
+    releaseDate: '2023-11-15',
     lastUpdated: new Date().toISOString(),
-    dimensions: {
-      width: 960,
-      height: 540,
-      aspectRatio: '16:9'
-    },
-    metadata: {
-      developer: 'Sports Games Studio',
-      publisher: 'Online Games',
-      releaseDate: '2023-11-15',
-      version: '2.1.0',
-      rating: {
-        score: 4.7,
-        count: 1800
-      }
-    },
-    performance: {
-      minFPS: 30,
-      targetFPS: 60,
-      recommendedSpecs: {
-        cpu: 'Intel Core i3 or equivalent',
-        ram: '2GB',
-        gpu: 'Intel HD Graphics 3000 or equivalent'
-      }
-    }
+    rating: 4.7,
+    ratingCount: 1800,
+    playCount: 5000
   },
   {
     id: 'color-blocks',
     title: 'Color Blocks',
     description: 'Match colors to clear blocks in this addictive puzzle game with challenging levels and power-ups.',
     category: 'puzzle',
-    thumbnailUrl: '/games/color-blocks.jpg',
-    iframeUrl: 'https://cloud.onlinegames.io/games/2024/puzzle/color-blocks/index.html',
-    controls: 'Tap or click to match blocks, drag for special moves',
+    thumbnail: '/games/color-blocks.jpg',
+    url: 'https://cloud.onlinegames.io/games/2024/puzzle/color-blocks/index.html',
     tags: ['puzzle', 'matching', 'colorful', 'casual'],
-    featured: true,
-    status: 'active',
+    iframeWidth: 640,
+    iframeHeight: 960,
+    releaseDate: '2024-01-05',
     lastUpdated: new Date().toISOString(),
-    dimensions: {
-      width: 640,
-      height: 960,
-      aspectRatio: '2:3'
-    },
-    metadata: {
-      developer: 'Puzzle Masters',
-      publisher: 'Mobile Games Inc',
-      releaseDate: '2024-01-05',
-      version: '3.0.2',
-      rating: {
-        score: 4.9,
-        count: 2500
-      }
-    },
-    performance: {
-      minFPS: 30,
-      targetFPS: 60,
-      recommendedSpecs: {
-        cpu: 'Any modern CPU',
-        ram: '2GB',
-        gpu: 'Any modern GPU'
-      }
-    }
+    rating: 4.9,
+    ratingCount: 2500,
+    playCount: 7500
   },
   {
     id: '1',
     title: 'Space Explorer',
     description: 'Explore the vast universe in this exciting space adventure',
     category: 'action',
-    thumbnailUrl: '/games/space-explorer.jpg',
-    iframeUrl: 'https://example.com/games/space-explorer',
-    controls: 'Use WASD to move, Space to shoot',
+    thumbnail: '/games/space-explorer.jpg',
+    url: 'https://example.com/games/space-explorer',
     tags: ['space', 'shooter', 'adventure'],
-    featured: true,
-    status: 'active',
+    iframeWidth: 800,
+    iframeHeight: 600,
+    releaseDate: '2024-01-01',
     lastUpdated: new Date().toISOString(),
-    dimensions: {
-      width: 800,
-      height: 600,
-      aspectRatio: '4:3'
-    },
-    metadata: {
-      developer: 'Space Games Studio',
-      publisher: 'Game Publisher',
-      releaseDate: '2024-01-01',
-      version: '1.0.0',
-      rating: {
-        score: 4.5,
-        count: 800
-      }
-    }
+    rating: 4.5,
+    ratingCount: 800,
+    playCount: 3000
   },
   {
     id: '2',
     title: 'Mind Puzzle',
     description: 'Challenge your brain with intricate puzzles',
     category: 'puzzle',
-    thumbnailUrl: '/games/mind-puzzle.jpg',
-    iframeUrl: 'https://example.com/games/mind-puzzle',
-    controls: 'Click and drag to solve puzzles',
+    thumbnail: '/games/mind-puzzle.jpg',
+    url: 'https://example.com/games/mind-puzzle',
     tags: ['puzzle', 'brain', 'logic'],
-    featured: false,
-    status: 'active',
+    iframeWidth: 800,
+    iframeHeight: 600,
+    releaseDate: '2024-02-15',
     lastUpdated: new Date().toISOString(),
-    dimensions: {
-      width: 800,
-      height: 600,
-      aspectRatio: '4:3'
-    },
-    metadata: {
-      developer: 'Puzzle Games Inc',
-      publisher: 'Game Publisher',
-      releaseDate: '2024-02-15',
-      version: '1.0.0',
-      rating: {
-        score: 4.2,
-        count: 600
-      }
-    }
+    rating: 4.2,
+    ratingCount: 600,
+    playCount: 2500
   }
 ];
