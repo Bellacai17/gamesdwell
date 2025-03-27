@@ -127,4 +127,80 @@ export async function updateGameData(gameId: string, updateData: Partial<Game>):
     console.error(`Error updating game with id ${gameId}:`, error);
     return null;
   }
+}
+
+// 增加游戏播放次数
+export async function incrementGamePlayCount(gameId: string): Promise<Game | null> {
+  try {
+    const game = await getGameById(gameId);
+    if (!game) {
+      return null;
+    }
+    
+    const currentPlayCount = game.playCount || 0;
+    return updateGameData(gameId, {
+      playCount: currentPlayCount + 1,
+      lastUpdated: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error(`Error incrementing play count for game ${gameId}:`, error);
+    return null;
+  }
+}
+
+// 更新游戏评分
+export async function updateGameRating(gameId: string, ratingData: {
+  rating: number;
+  comment?: string;
+  userId: string;
+  commentId: string;
+  date: string;
+}): Promise<{
+  rating: number;
+  ratingCount: number;
+  commentId: string;
+} | null> {
+  try {
+    const game = await getGameById(gameId);
+    if (!game) {
+      return null;
+    }
+    
+    // 创建新评论
+    const newComment = {
+      id: ratingData.commentId,
+      userId: ratingData.userId,
+      username: `User-${ratingData.userId.substring(0, 5)}`, // 为保持兼容性添加默认用户名
+      rating: ratingData.rating,
+      comment: ratingData.comment || '',
+      date: ratingData.date,
+      likes: 0,
+      replies: []
+    };
+    
+    // 计算新的平均评分
+    const comments = [...(game.comments || []), newComment];
+    const totalRatings = comments.reduce((sum, comment) => sum + comment.rating, 0);
+    const averageRating = comments.length > 0 ? totalRatings / comments.length : 0;
+    
+    // 更新游戏数据
+    const updatedGame = await updateGameData(gameId, {
+      comments,
+      rating: parseFloat(averageRating.toFixed(1)),
+      ratingCount: comments.length
+    });
+    
+    if (!updatedGame) {
+      return null;
+    }
+    
+    return {
+      rating: updatedGame.rating || 0,
+      ratingCount: updatedGame.ratingCount || 0,
+      commentId: ratingData.commentId
+    };
+  } catch (error) {
+    console.error(`Error updating rating for game ${gameId}:`, error);
+    return null;
+  }
 } 

@@ -2,9 +2,10 @@ import { Game } from '../types/game';
 
 interface GameHighlightsProps {
   game: Game;
+  className?: string;
 }
 
-export default function GameHighlights({ game }: GameHighlightsProps) {
+export default function GameHighlights({ game, className = '' }: GameHighlightsProps) {
   // 游戏亮点与玩法内容 - 实际应用中可以在游戏数据模型中添加这些字段
   const highlights = [
     {
@@ -38,7 +39,7 @@ export default function GameHighlights({ game }: GameHighlightsProps) {
   ];
 
   return (
-    <div className="game-highlights">
+    <div className={`game-highlights ${className}`}>
       <h2 className="text-2xl font-tech text-accent mb-6">Game Highlights</h2>
       
       {/* 游戏亮点 */}
@@ -61,7 +62,7 @@ export default function GameHighlights({ game }: GameHighlightsProps) {
           </p>
           <ol className="list-decimal list-inside space-y-2 text-text-secondary ml-4">
             <li>Click the <strong className="text-accent">Play Now</strong> button to load the game</li>
-            <li>Use {game.controls ? game.controls.split(',')[0] : 'the controls'} to start interacting with the game</li>
+            <li>Use the controls to start interacting with the game</li>
             <li>Complete objectives and progress through levels</li>
             <li>Challenge yourself to achieve the highest score</li>
           </ol>

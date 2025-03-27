@@ -6,9 +6,10 @@ import { Game } from '../types/game';
 
 interface GameScreenshotsProps {
   game: Game;
+  className?: string;
 }
 
-export default function GameScreenshots({ game }: GameScreenshotsProps) {
+export default function GameScreenshots({ game, className = '' }: GameScreenshotsProps) {
   // 假设游戏有多个截图，这里我们使用缩略图作为主要截图
   // 在实际应用中，可以在游戏数据模型中添加screenshots数组
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,7 +24,7 @@ export default function GameScreenshots({ game }: GameScreenshotsProps) {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4">
+    <div className={`bg-dark rounded-lg p-4 ${className}`}>
       <div className="relative aspect-video mb-4">
         <Image
           src={screenshots[activeIndex]}
