@@ -1,5 +1,5 @@
 import { NextRequest } from 'next/server';
-import { POST } from './route';
+import { POST } from '../../../api/games/play/route';
 import * as gamesLib from '../../../lib/games';
 
 // 模拟 games 库函数
