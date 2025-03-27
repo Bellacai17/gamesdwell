@@ -94,7 +94,7 @@ export default function GameIframe({ game, className = '' }: GameIframeProps) {
       <div className="game-iframe-wrapper">
         <iframe
           ref={iframeRef}
-          src={game.iframeUrl}
+          src={game.url}
           className={`game-iframe ${isFullscreen ? 'fullscreen' : ''}`}
           title={game.title}
           allowFullScreen
@@ -120,13 +120,6 @@ export default function GameIframe({ game, className = '' }: GameIframeProps) {
             </svg>
           )}
         </button>
-
-        {/* Performance Indicator */}
-        {game.performance && (
-          <div className="px-3 py-1 rounded-full bg-dark/80 backdrop-blur-sm text-xs text-text-secondary">
-            Target: {game.performance.targetFPS} FPS
-          </div>
-        )}
       </div>
     </div>
   );
