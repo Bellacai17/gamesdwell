@@ -1,70 +1,38 @@
+import { getGameById, updateGameRating } from '../../../lib/games';
 import { NextRequest, NextResponse } from 'next/server';
-import { updateGameData, getGameById } from '@/app/lib/games';
-import { GameComment } from '@/app/types/game';
 import { v4 as uuidv4 } from 'uuid';
 
 // POST /api/games/rate
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { gameId, userId, username, rating, comment } = body;
+    const data = await request.json();
+    const { gameId, rating, comment, userId } = data;
     
-    // 验证必填字段
-    if (!gameId || !userId || !username || !rating) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
+    if (!gameId || !rating || rating < 1 || rating > 5) {
+      return NextResponse.json({ error: 'Valid game ID and rating (1-5) are required' }, { status: 400 });
     }
     
-    // 获取游戏数据
     const game = await getGameById(gameId);
     if (!game) {
-      return NextResponse.json(
-        { error: 'Game not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: 'Game not found' }, { status: 404 });
     }
     
-    // 创建新评论
-    const newComment: GameComment = {
-      id: uuidv4(),
-      userId,
-      username,
-      rating: Number(rating),
-      comment: comment || '',
-      date: new Date().toISOString().split('T')[0],
-      likes: 0,
-      replies: []
-    };
+    // 生成唯一的评论ID
+    const commentId = uuidv4();
     
-    // 计算新的平均评分
-    const comments = [...(game.comments || []), newComment];
-    const totalRatings = comments.reduce((sum, comment) => sum + comment.rating, 0);
-    const averageRating = totalRatings / comments.length;
-    
-    // 更新游戏数据
-    const updatedGame = await updateGameData(gameId, {
-      comments,
-      rating: parseFloat(averageRating.toFixed(1)),
-      ratingCount: comments.length
+    // 更新游戏评分
+    const result = await updateGameRating(gameId, {
+      rating,
+      comment,
+      userId: userId || `anonymous-${commentId}`,
+      commentId,
+      date: new Date().toISOString()
     });
     
-    return NextResponse.json({
-      success: true,
-      comment: newComment,
-      game: {
-        id: updatedGame?.id,
-        rating: updatedGame?.rating,
-        ratingCount: updatedGame?.ratingCount
-      }
-    });
+    return NextResponse.json({ success: true, ...result });
   } catch (error) {
     console.error('Error rating game:', error);
-    return NextResponse.json(
-      { error: 'Failed to rate game' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to save rating' }, { status: 500 });
   }
 }
 

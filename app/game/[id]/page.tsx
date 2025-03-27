@@ -1,14 +1,14 @@
-import { getGameById, getAllGames } from '@/app/lib/games';
+import { getGameById, getAllGames } from '../../lib/games';
 import { notFound } from 'next/navigation';
-import GameHighlights from '@/app/components/GameHighlights';
-import GameScreenshots from '@/app/components/GameScreenshots'; 
-import GameTips from '@/app/components/GameTips';
-import RelatedGames from '@/app/components/RelatedGames';
-import GameRatings from '@/app/components/GameRatings';
-import SocialShare from '@/app/components/SocialShare';
-import PopularGames from '@/app/components/PopularGames';
-import ResponsiveIframe from '@/app/components/ResponsiveIframe';
-import GamePreview from '@/app/components/GamePreview';
+import GameHighlights from '../../components/GameHighlights';
+import GameScreenshots from '../../components/GameScreenshots'; 
+import GameTips from '../../components/GameTips';
+import RelatedGames from '../../components/RelatedGames';
+import GameRatings from '../../components/GameRatings';
+import SocialShare from '../../components/SocialShare';
+import PopularGames from '../../components/PopularGames';
+import ResponsiveIframe from '../../components/ResponsiveIframe';
+import GamePreview from '../../components/GamePreview';
 import { Metadata } from 'next';
 
 type Props = {

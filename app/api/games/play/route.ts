@@ -1,46 +1,29 @@
+import { getGameById, incrementGamePlayCount } from '../../../lib/games';
 import { NextRequest, NextResponse } from 'next/server';
-import { updateGameData, getGameById } from '@/app/lib/games';
 
 // POST /api/games/play
 // 记录游戏播放统计
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { gameId } = body;
+    const data = await request.json();
+    const { gameId } = data;
     
     if (!gameId) {
-      return NextResponse.json(
-        { error: 'Game ID is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Game ID is required' }, { status: 400 });
     }
     
-    // 获取游戏数据
     const game = await getGameById(gameId);
     if (!game) {
-      return NextResponse.json(
-        { error: 'Game not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: 'Game not found' }, { status: 404 });
     }
     
     // 增加游戏播放次数
-    const currentPlayCount = game.playCount || 0;
-    const updatedGame = await updateGameData(gameId, {
-      playCount: currentPlayCount + 1
-    });
+    await incrementGamePlayCount(gameId);
     
-    return NextResponse.json({
-      success: true,
-      gameId,
-      playCount: updatedGame?.playCount || currentPlayCount + 1
-    });
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error recording game play:', error);
-    return NextResponse.json(
-      { error: 'Failed to record game play' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to record game play' }, { status: 500 });
   }
 }
 
