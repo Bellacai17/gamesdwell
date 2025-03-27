@@ -1,0 +1,13 @@
+{
+  "name": "gamesdwell-scripts",
+  "version": "1.0.0",
+  "description": "Utility scripts for GamesDwell",
+  "scripts": {
+    "import": "node importGames.js",
+    "export": "node exportGames.js"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0"
+  }
+} 

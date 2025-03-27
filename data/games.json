@@ -1,0 +1,170 @@
+[
+  {
+    "id": "monster-survivors",
+    "title": "Monster Survivors",
+    "description": "Survive waves of monsters in this exciting action game. Upgrade your weapons and abilities to become stronger!",
+    "category": "action",
+    "thumbnail": "https://cloud.onlinegames.io/games/2025/unity/monster-survivors/thumbnail.jpg",
+    "url": "https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html",
+    "iframeWidth": 800,
+    "iframeHeight": 600,
+    "tags": [
+      "action",
+      "survival",
+      "monsters",
+      "upgrade"
+    ],
+    "rating": 4.8,
+    "ratingCount": 1250,
+    "playCount": 0,
+    "comments": [],
+    "releaseDate": "2024-03-25",
+    "lastUpdated": "2024-03-25T00:00:00.000Z",
+    "screenshots": [
+      "https://cloud.onlinegames.io/games/2025/unity/monster-survivors/screenshot1.jpg",
+      "https://cloud.onlinegames.io/games/2025/unity/monster-survivors/screenshot2.jpg",
+      "https://cloud.onlinegames.io/games/2025/unity/monster-survivors/screenshot3.jpg"
+    ],
+    "highlights": [
+      "Intense Survival Action",
+      "Power-ups & Weapons",
+      "Progressive Difficulty"
+    ],
+    "howToPlay": [
+      "Click Play Now to start the game",
+      "Use WASD to move your character",
+      "Click to shoot at monsters",
+      "Collect power-ups to enhance your abilities",
+      "Survive as long as possible to achieve high scores"
+    ],
+    "tips": {
+      "beginner": [
+        "Start with basic weapons and focus on movement",
+        "Collect power-ups whenever possible",
+        "Learn monster patterns"
+      ],
+      "intermediate": [
+        "Use terrain to your advantage",
+        "Prioritize power-ups based on your situation",
+        "Master the art of kiting"
+      ],
+      "advanced": [
+        "Optimize your power-up collection path",
+        "Perfect your movement patterns",
+        "Maximize your damage output"
+      ]
+    },
+    "storyBackground": "In a world overrun by monsters, you are one of the last survivors. Armed with various weapons and power-ups, you must fight to survive against endless waves of increasingly difficult enemies.",
+    "developerNotes": "Monster Survivors is designed to provide an engaging and challenging survival experience. The game features progressive difficulty and various power-ups to keep players engaged.",
+    "previewVideo": "https://www.youtube.com/embed/OqCfNcUiKrg"
+  },
+  {
+    "id": "stardust-demon-demo",
+    "title": "Stardust Demon Demo",
+    "description": "A fun and engaging classic HTML game that brings back the nostalgia of early web gaming.",
+    "category": "arcade",
+    "thumbnail": "https://img.itch.zone/aW1nLzExODkyNzk3LnBuZw==/original/your-game-thumbnail.png",
+    "url": "https://html-classic.itch.zone/html/11892797/index.html",
+    "iframeWidth": 800,
+    "iframeHeight": 600,
+    "tags": [
+      "classic",
+      "html5",
+      "browser",
+      "retro"
+    ],
+    "rating": 4.5,
+    "ratingCount": 500,
+    "playCount": 0,
+    "comments": [],
+    "releaseDate": "2024-03-26",
+    "lastUpdated": "2024-03-26T00:00:00.000Z",
+    "screenshots": [
+      "https://img.itch.zone/aW1nLzExODkyNzk3LnBuZw==/original/your-game-screenshot1.png",
+      "https://img.itch.zone/aW1nLzExODkyNzk3LnBuZw==/original/your-game-screenshot2.png"
+    ],
+    "highlights": [
+      "Classic Gameplay",
+      "Browser Compatible",
+      "Retro Style"
+    ],
+    "howToPlay": [
+      "Click Play Now to start the game",
+      "Use arrow keys or WASD to control",
+      "Follow the on-screen instructions",
+      "Try to achieve the highest score"
+    ],
+    "tips": {
+      "beginner": [
+        "Start with the tutorial level",
+        "Learn the basic controls",
+        "Practice timing"
+      ],
+      "intermediate": [
+        "Learn the patterns",
+        "Maximize your score",
+        "Use power-ups wisely"
+      ],
+      "advanced": [
+        "Master advanced techniques",
+        "Achieve perfect runs",
+        "Compete for high scores"
+      ]
+    },
+    "storyBackground": "This classic HTML game brings back the golden age of browser gaming, offering a simple yet engaging experience that can be enjoyed by players of all ages.",
+    "developerNotes": "The game is optimized for modern browsers while maintaining the authentic feel of classic HTML games."
+  },
+  {
+    "id": "giant-rush",
+    "title": "Giant Rush",
+    "description": "Run and jump through obstacles in this exciting endless runner game!",
+    "category": "action",
+    "thumbnail": "https://cdn.onlinegames.io/games/giant-rush/thumbnail.jpg",
+    "url": "https://play.famobi.com/giant-rush",
+    "iframeWidth": 800,
+    "iframeHeight": 600,
+    "tags": ["action", "runner", "arcade", "html5"],
+    "rating": 4.2,
+    "ratingCount": 1200,
+    "playCount": 50000,
+    "comments": [],
+    "releaseDate": "2024-03-26",
+    "lastUpdated": "2024-03-26T00:00:00.000Z",
+    "screenshots": [
+      "https://cdn.onlinegames.io/games/giant-rush/screenshot1.jpg",
+      "https://cdn.onlinegames.io/games/giant-rush/screenshot2.jpg",
+      "https://cdn.onlinegames.io/games/giant-rush/screenshot3.jpg"
+    ],
+    "highlights": [
+      "Smooth controls and responsive gameplay",
+      "Multiple obstacles and challenges",
+      "Power-ups and special abilities",
+      "Progressive difficulty system"
+    ],
+    "howToPlay": [
+      "Use arrow keys or WASD to control your character",
+      "Jump over obstacles using the spacebar",
+      "Collect power-ups to enhance your abilities",
+      "Try to reach the highest score possible"
+    ],
+    "tips": {
+      "beginner": [
+        "Start slow and learn the timing of jumps",
+        "Watch out for different types of obstacles",
+        "Collect coins for extra points"
+      ],
+      "intermediate": [
+        "Use power-ups strategically",
+        "Learn to chain combos for bonus points",
+        "Master the timing of special moves"
+      ],
+      "advanced": [
+        "Perfect your speed-running technique",
+        "Find optimal paths through obstacles",
+        "Maximize your score with power-up combinations"
+      ]
+    },
+    "storyBackground": "In a world where giants roam the land, you must run and jump through various obstacles to survive. Collect power-ups and special abilities to become even stronger and reach new heights!",
+    "developerNotes": "Giant Rush is designed to be accessible yet challenging, with smooth controls and engaging gameplay mechanics that keep players coming back for more."
+  }
+]
