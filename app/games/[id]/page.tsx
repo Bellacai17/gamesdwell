@@ -6,6 +6,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { gameCategories } from '../../../src/data/gameCategories';
 
+// 定义游戏类型
+interface Game {
+  id: string;
+  name: string;
+  category: string;
+  url: string;
+  // 添加其他可能的属性
+}
+
 // Generate color from string
 function getColorFromString(str: string): string {
   let hash = 0;
@@ -27,13 +36,13 @@ export default function GamePage() {
   const gameId = params?.id as string || '';
   
   // Find game
-  let foundGame = null;
+  let foundGame: Game | null = null;
   let categoryId = '';
   
   for (const category of gameCategories) {
     const game = category.games.find(g => g.id === gameId);
     if (game) {
-      foundGame = game;
+      foundGame = game as Game;
       categoryId = category.id;
       break;
     }

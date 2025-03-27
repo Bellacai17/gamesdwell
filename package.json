@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint --config .eslintrc.json .",
     "capture-screenshots": "ts-node scripts/capture-game-screenshots.js",
     "recapture-specific": "node scripts/recapture-specific-games.js"
   },
