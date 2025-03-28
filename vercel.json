@@ -1,0 +1,26 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@vercel/next"
+    }
+  ],
+  "github": {
+    "enabled": true,
+    "silent": true
+  },
+  "ignoreCommand": "false",
+  "settings": {
+    "buildTools": {
+      "eslint": {
+        "enabled": false
+      },
+      "typescript": {
+        "enabled": false
+      }
+    }
+  }
+} 
