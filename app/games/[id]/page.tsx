@@ -102,25 +102,31 @@ export default function GamePage() {
               Back to Category
             </Link>
           </div>
-          <h1 className="text-3xl font-bold text-gray-800">{foundGame.name}</h1>
-          <p className="text-gray-600 mt-2">Category: {foundGame.category}</p>
+          {foundGame && (
+            <>
+              <h1 className="text-3xl font-bold text-gray-800">{foundGame.name}</h1>
+              <p className="text-gray-600 mt-2">Category: {foundGame.category}</p>
+            </>
+          )}
         </div>
         
         {/* Game Preview */}
         <div className="mb-8">
           <div className="relative h-80 rounded-lg overflow-hidden">
-            <Image
-              src={`/images/games/${foundGame.id}.jpg`}
-              alt={foundGame.name}
-              width={800}
-              height={600}
-              className="object-cover w-full h-full"
-              onError={(e) => {
-                // If image fails to load, use placeholder
-                const target = e.target as HTMLImageElement;
-                target.src = `https://placehold.co/800x600/${getColorFromString(foundGame.id)}/1a1a1a/png?text=${encodeURIComponent(foundGame.name)}`;
-              }}
-            />
+            {foundGame && (
+              <Image
+                src={`/images/games/${foundGame.id}.jpg`}
+                alt={foundGame.name}
+                width={800}
+                height={600}
+                className="object-cover w-full h-full"
+                onError={(e) => {
+                  // If image fails to load, use placeholder
+                  const target = e.target as HTMLImageElement;
+                  target.src = `https://placehold.co/800x600/${getColorFromString(foundGame.id)}/1a1a1a/png?text=${encodeURIComponent(foundGame.name)}`;
+                }}
+              />
+            )}
           </div>
         </div>
         
@@ -130,13 +136,15 @@ export default function GamePage() {
             <h2 className="text-xl font-semibold text-gray-800">Play Game</h2>
           </div>
           <div className="aspect-w-16 aspect-h-9 w-full">
-            <iframe
-              src={getEmbedUrl(foundGame.url)}
-              className="w-full h-[600px]"
-              frameBorder="0"
-              allowFullScreen
-              title={foundGame.name}
-            ></iframe>
+            {foundGame && (
+              <iframe
+                src={getEmbedUrl(foundGame.url)}
+                className="w-full h-[600px]"
+                frameBorder="0"
+                allowFullScreen
+                title={foundGame.name}
+              ></iframe>
+            )}
           </div>
         </div>
       </main>
